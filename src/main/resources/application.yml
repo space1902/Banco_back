@@ -5,7 +5,7 @@ server:
 jms:
   jwt:
     security: 
-      enable: true
+      enable: false
     issuer: "www.prueba.net"
     timezone: "America/Bogota"
     token: 

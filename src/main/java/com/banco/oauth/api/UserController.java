@@ -30,12 +30,13 @@ public class UserController {
 	public ResponseEntity<Object> calcuar(@PathVariable Float monto, @PathVariable Float plazomeses, @PathVariable Float interesea){
 		
 		float montoPlazo = monto/plazomeses;
-		float interesMeses = interesea/12;
+		float interesMeses = (interesea/100)/12;
 		float cuotaMensual = montoPlazo*(1+interesMeses);
 		
 		return ResponseEntity.ok(cuotaMensual);
 	}
 	
+	@CrossOrigin
 	@GetMapping(path ="listar")
 	public ResponseEntity<Object> listar(){
 		List<UserCredit> users = userDao.findAll();
